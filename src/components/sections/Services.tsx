@@ -1,6 +1,10 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircle2, ShieldCheck, Clock, Zap, ChevronRight } from 'lucide-react'
+import serviceTecnologia from '@/assets/images/services/service-tecnologia.svg'
+import serviceAgilidade from '@/assets/images/services/service-agilidade.svg'
+import serviceProtecao from '@/assets/images/services/service-protecao.svg'
+import serviceGarantia from '@/assets/images/services/service-garantia.svg'
 
 const services = [
   {
@@ -8,28 +12,28 @@ const services = [
     title: "Tecnologia",
     description: "Equipamentos que removem chuva ácida sem riscar.",
     icon: <Zap className="w-6 h-6 text-cyan-400" />,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+    image: serviceTecnologia,
   },
   {
     id: 2,
     title: "Agilidade",
     description: "Processo rápido. Não paramos sua rotina.",
     icon: <Clock className="w-6 h-6 text-blue-400" />,
-    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop",
+    image: serviceAgilidade,
   },
   {
     id: 3,
     title: "Proteção",
     description: "Blindagem que repele sujeira por muito mais tempo.",
     icon: <ShieldCheck className="w-6 h-6 text-cyan-400" />,
-    image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop",
+    image: serviceProtecao,
   },
   {
     id: 4,
     title: "Garantia",
     description: "Satisfação total ou refazemos o trabalho.",
     icon: <CheckCircle2 className="w-6 h-6 text-blue-400" />,
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2000&auto=format&fit=crop",
+    image: serviceGarantia,
   }
 ]
 

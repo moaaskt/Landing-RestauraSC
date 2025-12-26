@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send } from 'lucide-react'
+import whatsappPattern from '@/assets/images/whatsapp-background-pattern.svg'
 
 // Estilos injetados para o efeito de Radar (Pulse) exato do CodePen
 const styles = `
@@ -56,7 +57,7 @@ export function FloatingWhatsApp() {
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className="w-[300px] sm:w-[350px] bg-[#e9e0d7] rounded-2xl shadow-2xl overflow-hidden border border-white/20 origin-bottom-right"
               style={{ 
-                backgroundImage: "url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')",
+                backgroundImage: `url(${whatsappPattern})`,
                 backgroundBlendMode: "overlay"
               }}
             >
