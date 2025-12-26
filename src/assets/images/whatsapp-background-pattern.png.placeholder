@@ -1,0 +1,16 @@
+# Placeholder para whatsapp-background-pattern.png
+
+Este arquivo indica que a imagem `whatsapp-background-pattern.png` precisa ser adicionada aqui.
+
+## Especificações:
+- **Nome:** `whatsapp-background-pattern.png`
+- **Uso:** Background pattern da janela do chat WhatsApp
+- **Tamanho sugerido:** 200x200px (pode ser repetido/tile)
+- **Formato:** PNG com transparência ou SVG
+- **Descrição:** Padrão de fundo típico do WhatsApp (textura/pattern de pontos ou linhas)
+
+## Como obter:
+1. Baixar o padrão original do WhatsApp
+2. Ou criar um SVG/PNG com padrão similar
+3. Renomear para `whatsapp-background-pattern.png` (remover `.placeholder`)
+
