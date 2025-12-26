@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle2, ShieldCheck, Clock, Zap, ChevronRight } from 'lucide-react'
+import { CheckCircle2, ShieldCheck, Clock, Zap } from 'lucide-react'
 import serviceTecnologia from '@/assets/images/services/service-tecnologia.svg'
 import serviceAgilidade from '@/assets/images/services/service-agilidade.svg'
 import serviceProtecao from '@/assets/images/services/service-protecao.svg'
