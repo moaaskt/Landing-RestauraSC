@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  /* Fundo Principal: Um preto 'rico' (Zinc 950) ao invés de Slate */
+  --color-brand-dark: #09090b; 
+  /* Fundo Secundário (Cards): Um tom acima */
+  --color-brand-surface: #18181b; 
+  
+  /* Cor Principal: Ciano Elétrico (Mais vibrante que o azul antigo) */
+  --color-brand-primary: #06b6d4; 
+  --color-brand-secondary: #3b82f6;
+  
+  /* Cor de Brilho (Glow) */
+  --color-brand-glow: rgba(6, 182, 212, 0.5); 
+}
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  background-color: #0f172a; 
+    @apply bg-brand-dark text-white antialiased;
+  }
+}
+
+/* Utilitário para texto gradiente (Ouro/Premium) */
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-cyan-400;
+  }
+}

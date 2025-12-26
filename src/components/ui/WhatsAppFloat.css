@@ -1,0 +1,159 @@
+/* WhatsAppFloat.css */
+
+/* O Container do Botão Pulsante */
+.whatsapp-btn-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+  }
+  
+  .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* A Animação de Radar/Pulso do CodePen */
+    animation: pulse 2s infinite;
+  }
+  
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+    background-color: #128C7E;
+  }
+  
+  .whatsapp-icon-svg {
+    width: 35px;
+    height: 35px;
+    fill: white;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+  
+  /* O Widget (Card de Formulário) */
+  .chat-widget {
+    position: fixed;
+    bottom: 110px;
+    right: 40px;
+    width: 300px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    z-index: 9998;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Transições de entrada/saída */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .chat-widget.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .widget-header {
+    background-color: #075e54;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  
+  .widget-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .message-bubble {
+    background-color: #e1ffc7;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  /* --- CORREÇÃO DOS INPUTS --- */
+  .input-group {
+    margin-bottom: 10px;
+  }
+  
+  .custom-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    background-color: #fff;
+    
+    /* A CORREÇÃO CRÍTICA PARA O TEXTO "INVISÍVEL" */
+    color: #111 !important; 
+    font-weight: 500;
+  }
+  
+  .custom-input::placeholder {
+    color: #999;
+  }
+  
+  .custom-input:focus {
+    border-color: #25d366;
+    box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.2);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #075e54;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+    margin-top: 5px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #054c44;
+  }
