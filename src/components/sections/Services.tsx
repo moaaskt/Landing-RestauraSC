@@ -96,50 +96,88 @@ export function Services() {
               display: none;
             }
           `}</style>
-          <motion.div 
-            drag={isMobile ? false : "x"}
-            dragConstraints={isMobile ? undefined : { right: 0, left: -width }}
-            dragElastic={0.1}
-            className="flex gap-4 md:gap-6 md:cursor-grab md:active:cursor-grabbing"
-            style={{ 
-              display: 'flex',
-              flexWrap: 'nowrap',
-              touchAction: isMobile ? 'pan-x' : 'none'
-            }}
-          >
-            {services.map((service) => (
-              <motion.div
-                key={service.id}
-                className="min-w-[85vw] sm:min-w-[350px] md:min-w-[300px] relative h-[420px] rounded-2xl overflow-hidden bg-brand-surface border border-white/5 shadow-lg group flex-shrink-0"
-              >
-                {/* Imagem (pointer-events-none evita que a imagem seja 'arrastada' ao invés do card) */}
-                <img 
-                  src={service.image} 
-                  alt={service.title} 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 pointer-events-none"
-                />
-                
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+          {isMobile ? (
+            /* MOBILE: Scroll nativo sem Framer Motion */
+            <div className="flex gap-4 md:gap-6">
+              {services.map((service) => (
+                <motion.div
+                  key={service.id}
+                  className="min-w-[85vw] sm:min-w-[350px] md:min-w-[300px] relative h-[420px] rounded-2xl overflow-hidden bg-brand-surface border border-white/5 shadow-lg group flex-shrink-0"
+                >
+                  {/* Imagem (pointer-events-none evita que a imagem seja 'arrastada' ao invés do card) */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 pointer-events-none"
+                  />
+                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-                <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col justify-end h-full">
-                  <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl w-fit mb-4 border border-white/10">
-                    {service.icon}
+                  <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col justify-end h-full">
+                    <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl w-fit mb-4 border border-white/10">
+                      {service.icon}
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-slate-300 text-sm leading-relaxed opacity-90">
+                      {service.description}
+                    </p>
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
-                    {service.title}
-                  </h3>
+                  {/* Borda Glow */}
+                  <div className="absolute inset-0 border border-white/10 group-hover:border-cyan-500/50 rounded-2xl transition-colors duration-500" />
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            /* DESKTOP: Drag Framer Motion */
+            <motion.div 
+              drag="x"
+              dragConstraints={{ right: 0, left: -width }}
+              dragElastic={0.1}
+              className="flex gap-4 md:gap-6 cursor-grab active:cursor-grabbing"
+              style={{ 
+                display: 'flex',
+                flexWrap: 'nowrap'
+              }}
+            >
+              {services.map((service) => (
+                <motion.div
+                  key={service.id}
+                  className="min-w-[85vw] sm:min-w-[350px] md:min-w-[300px] relative h-[420px] rounded-2xl overflow-hidden bg-brand-surface border border-white/5 shadow-lg group flex-shrink-0"
+                >
+                  {/* Imagem (pointer-events-none evita que a imagem seja 'arrastada' ao invés do card) */}
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 pointer-events-none"
+                  />
                   
-                  <p className="text-slate-300 text-sm leading-relaxed opacity-90">
-                    {service.description}
-                  </p>
-                </div>
-                
-                {/* Borda Glow */}
-                <div className="absolute inset-0 border border-white/10 group-hover:border-cyan-500/50 rounded-2xl transition-colors duration-500" />
-              </motion.div>
-            ))}
-          </motion.div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+
+                  <div className="absolute bottom-0 left-0 w-full p-6 flex flex-col justify-end h-full">
+                    <div className="bg-white/10 backdrop-blur-md p-3 rounded-xl w-fit mb-4 border border-white/10">
+                      {service.icon}
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-slate-300 text-sm leading-relaxed opacity-90">
+                      {service.description}
+                    </p>
+                  </div>
+                  
+                  {/* Borda Glow */}
+                  <div className="absolute inset-0 border border-white/10 group-hover:border-cyan-500/50 rounded-2xl transition-colors duration-500" />
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
         </div>
 
         {/* Dica visual Mobile */}
