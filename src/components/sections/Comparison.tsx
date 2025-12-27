@@ -14,6 +14,11 @@ export function Comparison() {
   const handleMove = (event: React.MouseEvent | React.TouchEvent) => {
     if (!containerRef.current) return
 
+    // Prevenir scroll padrão em touch events
+    if ('touches' in event) {
+      event.preventDefault()
+    }
+
     const { left, width } = containerRef.current.getBoundingClientRect()
     let clientX
 
@@ -35,7 +40,8 @@ export function Comparison() {
     if (isDragging) {
       window.addEventListener('mousemove', handleMove as any)
       window.addEventListener('mouseup', handleMouseUp)
-      window.addEventListener('touchmove', handleMove as any)
+      // iOS Safari: passive: false permite preventDefault
+      window.addEventListener('touchmove', handleMove as any, { passive: false })
       window.addEventListener('touchend', handleMouseUp)
     } else {
       window.removeEventListener('mousemove', handleMove as any)
@@ -52,10 +58,10 @@ export function Comparison() {
   }, [isDragging])
 
   return (
-    <section className="py-20 bg-brand-dark overflow-hidden">
+    <section className="py-12 md:py-20 bg-brand-dark overflow-hidden">
       <div className="container mx-auto px-6">
         
-        <div className="text-center mb-12">
+        <div className="text-center mb-6 md:mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

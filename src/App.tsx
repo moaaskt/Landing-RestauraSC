@@ -6,7 +6,7 @@ import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
 
 function App() {
   return (
-    <main className="bg-brand-dark min-h-screen selection:bg-cyan-500/30">
+    <main className="bg-brand-dark selection:bg-cyan-500/30">
       <Navbar />
       <Hero />
       <Services />

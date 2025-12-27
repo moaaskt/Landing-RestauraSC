@@ -45,7 +45,13 @@ export function FloatingWhatsApp() {
     <>
       <style>{styles}</style>
       
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 font-sans">
+      <div 
+        className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 font-sans"
+        style={{
+          paddingBottom: 'env(safe-area-inset-bottom)',
+          paddingRight: 'max(1.5rem, env(safe-area-inset-right))'
+        }}
+      >
         
         {/* JANELA DO CHAT */}
         <AnimatePresence>
