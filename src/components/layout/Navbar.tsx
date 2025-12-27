@@ -22,12 +22,12 @@ export function Navbar() {
               backdrop-blur-2xl
               border border-white/20
               shadow-[0_8px_30px_rgba(0,0,0,0.25)]
-              py-3
+              py-2 md:py-3
             `
             : `
               bg-transparent
               border-transparent
-              py-6
+              py-4 md:py-6
             `
         }`}
       >
@@ -41,17 +41,17 @@ export function Navbar() {
 
           {/* LOGO */}
           <div className="flex items-center">
-  <img
-    src="/logo-restaura.svg"
-    alt="RestauraSC"
-    className="
-      h-12 sm:h-16 md:h-20
-      w-auto
-      object-contain
-      transition-all duration-300
-    "
-  />
-</div>
+            <img
+              src="/logo-restaura.svg"
+              alt="RestauraSC"
+              className="
+                h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32
+                w-auto
+                object-contain
+                transition-all duration-300
+              "
+            />
+          </div>
 
 
           {/* MENU DESKTOP */}
@@ -86,17 +86,18 @@ export function Navbar() {
           </div>
 
           {/* MOBILE BUTTON */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="
-                p-2 rounded-lg
+                p-2.5 rounded-lg
                 bg-white/5
                 backdrop-blur-md
                 border border-white/20
                 text-white
                 hover:bg-white/10
                 transition-all
+                flex items-center justify-center
               "
             >
               {mobileMenuOpen ? <X /> : <Menu />}
