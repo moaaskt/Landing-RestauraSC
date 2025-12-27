@@ -4,6 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "tailwindcss";
 
 @theme {
   /* Fundo Principal: Um preto 'rico' (Zinc 950) ao invés de Slate */
