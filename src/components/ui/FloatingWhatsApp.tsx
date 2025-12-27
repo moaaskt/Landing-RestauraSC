@@ -30,7 +30,7 @@ export function FloatingWhatsApp() {
   })
 
   // SEU NÚMERO AQUI
-  const phoneNumber = "554899" 
+  const phoneNumber = "5548999447125" 
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
