@@ -10,7 +10,7 @@ export function Hero() {
       <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-cyan-900/20 via-blue-900/10 to-transparent pointer-events-none" />
       <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 py-20 flex flex-col-reverse lg:flex-row items-center gap-16 z-10">
+      <div className="container mx-auto px-6 pt-36 md:pt-40 pb-20 flex flex-col-reverse lg:flex-row items-center gap-16 z-10">
         
         {/* TEXTO */}
         <div className="w-full lg:w-1/2 flex flex-col gap-8 text-center lg:text-left">

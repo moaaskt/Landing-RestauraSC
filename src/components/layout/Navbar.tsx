@@ -22,18 +22,18 @@ export function Navbar() {
               backdrop-blur-2xl
               border border-white/20
               shadow-[0_8px_30px_rgba(0,0,0,0.25)]
-              py-2 md:py-3
+              py-2
             `
             : `
               bg-transparent
               border-transparent
-              py-4 md:py-6
+              py-4
             `
         }`}
       >
         {/* GLASS HIGHLIGHT (iOS magic) */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent" />
         </div>
 
         {/* CONTENT */}
@@ -45,7 +45,7 @@ export function Navbar() {
               src="/logo-restaura.svg"
               alt="RestauraSC"
               className="
-                h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32
+                h-16
                 w-auto
                 object-contain
                 transition-all duration-300
@@ -55,7 +55,7 @@ export function Navbar() {
 
 
           {/* MENU DESKTOP */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center">
             <nav className="flex gap-6">
               {['Serviços', 'Tecnologia', 'Projetos'].map((item) => (
                 <a
@@ -68,21 +68,6 @@ export function Navbar() {
                 </a>
               ))}
             </nav>
-
-            <Button
-              variant="outline"
-              className="
-                h-10 px-5 text-xs uppercase tracking-wide
-                bg-white/5
-                backdrop-blur-md
-                border border-white/20
-                hover:bg-white/10
-                hover:border-white/30
-                transition-all
-              "
-            >
-              Área do Cliente
-            </Button>
           </div>
 
           {/* MOBILE BUTTON */}
